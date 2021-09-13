@@ -30,6 +30,7 @@ namespace TP_WinForm
         {
             //de la fila actual trae el objeto enlazado, devuelve un objeto que se le asigna a Articulo seleccionado
             Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
             cargarImagen(seleccionado.ImagenURL);
                 }
         //funcion que carga la imagen
@@ -45,6 +46,11 @@ namespace TP_WinForm
                 // muestra imagen por defecto si el articulo no tiene una
                 pictureBoxArticulos.Load("https://uning.es/wp-content/uploads/2016/08/ef3-placeholder-image.jpg");
             }
+        }
+
+        private void pictureBoxArticulos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

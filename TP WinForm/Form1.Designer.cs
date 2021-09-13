@@ -49,15 +49,16 @@ namespace TP_WinForm
             this.pictureBoxArticulos.Location = new System.Drawing.Point(590, 0);
             this.pictureBoxArticulos.Name = "pictureBoxArticulos";
             this.pictureBoxArticulos.Size = new System.Drawing.Size(288, 348);
-            this.pictureBoxArticulos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBoxArticulos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxArticulos.TabIndex = 1;
             this.pictureBoxArticulos.TabStop = false;
+            this.pictureBoxArticulos.Click += new System.EventHandler(this.pictureBoxArticulos_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 360);
+            this.ClientSize = new System.Drawing.Size(901, 373);
             this.Controls.Add(this.pictureBoxArticulos);
             this.Controls.Add(this.dgvArticulos);
             this.Name = "Form1";
@@ -66,7 +67,6 @@ namespace TP_WinForm
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArticulos)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
