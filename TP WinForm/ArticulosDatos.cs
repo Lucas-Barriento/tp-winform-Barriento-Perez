@@ -20,7 +20,9 @@ namespace TP_WinForm
                 //conexion a db sql
                 conexion.ConnectionString = "server=.\\SQLEXPRESS;database=CATALOGO_DB;integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select id,Codigo,Nombre,Descripcion,ImagenUrl from ARTICULOS";
+                //comando.CommandText = "select a.id,Codigo,Nombre,Descripcion,ImagenUrl from ARTICULOS a ";
+                //comando.CommandText = "select a.id,Codigo,Nombre,a.Descripcion,ImagenUrl,C.Descripcion from ARTICULOS A, CATEGORIAS C where C.id = A.IdCategoria";
+                comando.CommandText =   "select a.id,Codigo,Nombre,M.Descripcion Marca,a.Descripcion,ImagenUrl,C.Descripcion from ARTICULOS A, CATEGORIAS C, MARCAS M where C.id = A.IdCategoria and M.Id = A.IdMarca";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -35,6 +37,11 @@ namespace TP_WinForm
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
                     aux.ImagenURL = (string)lector["ImagenUrl"];
+                    aux.CAT = new CATEGORIA();
+                    aux.CAT.CATdescripcion = lector.GetString(6);
+                    aux.Marca = new MARCA();
+                    aux.Marca.marca = lector.GetString(3);
+                    
 
                     lista.Add(aux); 
                 }

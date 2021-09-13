@@ -13,6 +13,10 @@ namespace TP_WinForm
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public string ImagenURL { get; set; }
+
+        public CATEGORIA CAT { get; set; }
+
+        public MARCA Marca { get; set; }
         /* public int IDMarca { get; set; }
          public int IDCategoria { get; set; }
          public float Precio { get; set; }*/

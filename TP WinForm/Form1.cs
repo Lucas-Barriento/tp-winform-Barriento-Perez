@@ -23,6 +23,7 @@ namespace TP_WinForm
             ArticulosDatos datos= new ArticulosDatos();
             ListaArticulo = datos.Listar(); 
             dgvArticulos.DataSource = ListaArticulo;
+            dgvArticulos.Columns["ImagenUrl"].Visible=false;
             cargarImagen(ListaArticulo[0].ImagenURL);           
         }
 
@@ -41,7 +42,7 @@ namespace TP_WinForm
             {
                 pictureBoxArticulos.Load(imagen);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 // muestra imagen por defecto si el articulo no tiene una
                 pictureBoxArticulos.Load("https://uning.es/wp-content/uploads/2016/08/ef3-placeholder-image.jpg");
