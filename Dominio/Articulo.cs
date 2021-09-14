@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_WinForm
+namespace Dominio
 {
-    class Articulo
+    public class Articulo
     {
         public int ID { get; set; }
         public string Codigo { get; set; }
@@ -14,7 +14,7 @@ namespace TP_WinForm
         public string Descripcion { get; set; }
         public string ImagenURL { get; set; }
 
-        public CATEGORIA CAT { get; set; }
+        public Categoria Categoria { get; set; }
 
         public MARCA Marca { get; set; }
         /* public int IDMarca { get; set; }

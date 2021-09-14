@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using Dominio;
 
-namespace TP_WinForm
+namespace Datos
 {
-    class ArticulosDatos
+    public class ArticulosDatos
     {
         public List<Articulo> Listar()
         {
@@ -37,8 +38,8 @@ namespace TP_WinForm
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
                     aux.ImagenURL = (string)lector["ImagenUrl"];
-                    aux.CAT = new CATEGORIA();
-                    aux.CAT.CATdescripcion = lector.GetString(6);
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.CategoriaDescripcion = lector.GetString(6);
                     aux.Marca = new MARCA();
                     aux.Marca.marca = lector.GetString(3);
                     

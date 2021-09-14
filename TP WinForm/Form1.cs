@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
+using Datos;
 
 namespace TP_WinForm
 {
@@ -50,6 +52,11 @@ namespace TP_WinForm
         }
 
         private void pictureBoxArticulos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

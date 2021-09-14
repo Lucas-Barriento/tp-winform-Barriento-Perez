@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_WinForm
+namespace Dominio
 {
-    class CATEGORIA
+    public class MARCA
     {
-        public int ID { get; set; }
-        public string CATdescripcion { get; set; }
+        public int id { get; set; }
+        public string marca { get; set; }
 
         public override string ToString()
         {
-            return CATdescripcion;
+            return marca;
         }
     }
 }
