@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Dominio;
 
+//sin conexion centralizada:
+/*
 namespace Datos
 {
     public class ArticulosDatos
     {
+       
         public List<Articulo> Listar()
         {
             List<Articulo> lista = new List<Articulo>();
@@ -57,4 +60,52 @@ namespace Datos
             
         }
     }
+}*/
+
+
+//con conexion centralizada:
+namespace Datos
+{
+    public class ArticulosDatos
+    {
+        public List<Articulo> Listar()
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta("select a.id,Codigo,Nombre,M.Descripcion Marca,a.Descripcion,ImagenUrl,C.Descripcion from ARTICULOS A, CATEGORIAS C, MARCAS M where C.id = A.IdCategoria and M.Id = A.IdMarca");
+                datos.EjecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Articulo aux = new Articulo();
+                    aux.ID = (int)datos.Lector["id"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.ImagenURL = (string)datos.Lector["ImagenUrl"];
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.CategoriaDescripcion = datos.Lector.GetString(6);
+                    aux.Marca = new MARCA();
+                    aux.Marca.marca = datos.Lector.GetString(3);
+                    lista.Add(aux);
+                }
+                
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;   
+            }
+
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        }
 }
