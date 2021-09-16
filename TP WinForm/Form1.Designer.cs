@@ -31,6 +31,7 @@ namespace TP_WinForm
         {
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.pictureBoxArticulos = new System.Windows.Forms.PictureBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArticulos)).BeginInit();
             this.SuspendLayout();
@@ -55,11 +56,22 @@ namespace TP_WinForm
             this.pictureBoxArticulos.TabStop = false;
             this.pictureBoxArticulos.Click += new System.EventHandler(this.pictureBoxArticulos_Click);
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(38, 284);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 2;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(901, 373);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.pictureBoxArticulos);
             this.Controls.Add(this.dgvArticulos);
             this.Name = "Form1";
@@ -75,6 +87,7 @@ namespace TP_WinForm
 
         private System.Windows.Forms.DataGridView dgvArticulos;
         private System.Windows.Forms.PictureBox pictureBoxArticulos;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }
 

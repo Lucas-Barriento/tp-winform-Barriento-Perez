@@ -24,11 +24,21 @@ namespace TP_WinForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ArticulosDatos datos= new ArticulosDatos();
-            ListaArticulo = datos.Listar(); 
-            dgvArticulos.DataSource = ListaArticulo;
-            dgvArticulos.Columns["ImagenUrl"].Visible=false;
-            cargarImagen(ListaArticulo[0].ImagenURL);
+            ArticulosDatos datos = new ArticulosDatos();
+            try
+            {
+                ListaArticulo = datos.Listar();
+                dgvArticulos.DataSource = ListaArticulo;
+                dgvArticulos.Columns["ImagenUrl"].Visible = false;
+                cargarImagen(ListaArticulo[0].ImagenURL);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+            
+            
             
            
         }
@@ -63,6 +73,12 @@ namespace TP_WinForm
         private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAltaArticulo alta = new frmAltaArticulo();
+            alta.ShowDialog();
         }
     }
 }
