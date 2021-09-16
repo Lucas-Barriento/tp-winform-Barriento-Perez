@@ -15,6 +15,7 @@ namespace TP_WinForm
     public partial class Form1 : Form
     {
         private List<Articulo> ListaArticulo;
+        
      
         public Form1()
         {
@@ -28,6 +29,7 @@ namespace TP_WinForm
             dgvArticulos.DataSource = ListaArticulo;
             dgvArticulos.Columns["ImagenUrl"].Visible=false;
             cargarImagen(ListaArticulo[0].ImagenURL);
+            
            
         }
 
@@ -37,7 +39,7 @@ namespace TP_WinForm
             Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
             cargarImagen(seleccionado.ImagenURL);
-                }
+        }
         //funcion que carga la imagen
         private void cargarImagen(String imagen)
         {
