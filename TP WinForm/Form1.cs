@@ -15,6 +15,7 @@ namespace TP_WinForm
     public partial class Form1 : Form
     {
         private List<Articulo> ListaArticulo;
+     
         public Form1()
         {
             InitializeComponent();
@@ -26,7 +27,8 @@ namespace TP_WinForm
             ListaArticulo = datos.Listar(); 
             dgvArticulos.DataSource = ListaArticulo;
             dgvArticulos.Columns["ImagenUrl"].Visible=false;
-            cargarImagen(ListaArticulo[0].ImagenURL);           
+            cargarImagen(ListaArticulo[0].ImagenURL);
+           
         }
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)

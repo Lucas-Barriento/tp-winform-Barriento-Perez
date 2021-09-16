@@ -12,7 +12,9 @@ namespace Datos
         private SqlCommand comando;
         private SqlDataReader lector;
         //lectura desde el exterior:
-        public SqlDataReader Lector { get { return lector; } }
+        public SqlDataReader Lector { 
+            get { return lector; }
+        }
 
         //conexion:
         public AccesoDatos()
