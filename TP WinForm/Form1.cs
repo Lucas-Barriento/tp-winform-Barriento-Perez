@@ -24,12 +24,18 @@ namespace TP_WinForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            cargar();
+        }
+
+        private void cargar()
+        {
             ArticulosDatos datos = new ArticulosDatos();
             try
             {
                 ListaArticulo = datos.Listar();
                 dgvArticulos.DataSource = ListaArticulo;
                 dgvArticulos.Columns["ImagenUrl"].Visible = false;
+                dgvArticulos.Columns["id"].Visible = false;
                 cargarImagen(ListaArticulo[0].ImagenURL);
             }
             catch (Exception ex)
@@ -37,12 +43,7 @@ namespace TP_WinForm
 
                 MessageBox.Show(ex.ToString());
             }
-            
-            
-            
-           
         }
-
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
             //de la fila actual trae el objeto enlazado, devuelve un objeto que se le asigna a Articulo seleccionado
@@ -79,6 +80,16 @@ namespace TP_WinForm
         {
             frmAltaArticulo alta = new frmAltaArticulo();
             alta.ShowDialog();
+            cargar();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Articulo seleccionado;
+            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
+            modificar.ShowDialog();
+            cargar();
         }
     }
 }

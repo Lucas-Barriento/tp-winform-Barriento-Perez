@@ -37,7 +37,7 @@ namespace Datos
                         aux.ImagenURL = (string)datos.Lector["ImagenUrl"];
                        
                    if (!(datos.Lector["Precio"] is DBNull))
-                       /* aux.Precio = (float)datos.Lector["Precio"]; */
+                       aux.Precio =Convert.ToDouble(datos.Lector["Precio"]); 
 
                     aux.Categoria = new Categoria();
                     aux.Categoria.CategoriaDescripcion = datos.Lector.GetString(6);
@@ -70,7 +70,12 @@ namespace Datos
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearConsulta("insert into ARTICULOS (Codigo,Nombre,Descripcion,Precio,IdMarca,IdCategoria) values ('" + nuevo.Codigo+"','"+nuevo.Nombre+"','"+nuevo.Descripcion+"',"+nuevo.Precio+ ",@IdMarca,@IdCategoria)");
+                datos.SetearConsulta("insert into ARTICULOS (Codigo,Nombre,Descripcion,ImagenUrl,Precio,IdMarca,IdCategoria) values (@Codigo,@Nombre,@Descripcion,@ImagenURL,@Precio,@IdMarca,@IdCategoria)");
+                datos.setearParametro("@Codigo", nuevo.Codigo);
+                datos.setearParametro("@Nombre", nuevo.Nombre);
+                datos.setearParametro("@Descripcion", nuevo.Descripcion);
+                datos.setearParametro("@ImagenURL", nuevo.ImagenURL);
+                datos.setearParametro("@Precio", nuevo.Precio);
                 datos.setearParametro("@IdMarca", nuevo.Marca.id);
                 datos.setearParametro("@IdCategoria", nuevo.Categoria.ID);
                 datos.EjecutarAccion();

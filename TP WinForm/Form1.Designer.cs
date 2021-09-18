@@ -32,6 +32,7 @@ namespace TP_WinForm
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.pictureBoxArticulos = new System.Windows.Forms.PictureBox();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArticulos)).BeginInit();
             this.SuspendLayout();
@@ -39,8 +40,11 @@ namespace TP_WinForm
             // dgvArticulos
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.Location = new System.Drawing.Point(0, 0);
+            this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArticulos.Size = new System.Drawing.Size(584, 261);
             this.dgvArticulos.TabIndex = 0;
             this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentClick);
@@ -60,17 +64,28 @@ namespace TP_WinForm
             // 
             this.btnAgregar.Location = new System.Drawing.Point(38, 284);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(101, 21);
             this.btnAgregar.TabIndex = 2;
-            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Text = "Agregar Articulo";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(165, 284);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 21);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Modificar Articulo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(901, 373);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.pictureBoxArticulos);
             this.Controls.Add(this.dgvArticulos);
@@ -88,6 +103,7 @@ namespace TP_WinForm
         private System.Windows.Forms.DataGridView dgvArticulos;
         private System.Windows.Forms.PictureBox pictureBoxArticulos;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button button1;
     }
 }
 
