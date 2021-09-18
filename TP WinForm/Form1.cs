@@ -24,7 +24,7 @@ namespace TP_WinForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            cargar();
+            dgvArticulos.Visible = false;
         }
 
         private void cargar()
@@ -83,12 +83,18 @@ namespace TP_WinForm
             cargar();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnModificar_Click(object sender, EventArgs e)
         {
             Articulo seleccionado;
             seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
             modificar.ShowDialog();
+            cargar();
+        }
+
+        private void BtnListar_Click(object sender, EventArgs e)
+        {
+            dgvArticulos.Visible = true;
             cargar();
         }
     }

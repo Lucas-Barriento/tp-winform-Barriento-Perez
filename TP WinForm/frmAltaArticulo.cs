@@ -38,20 +38,34 @@ namespace TP_WinForm
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Articulo articulo = new Articulo();
+            
             ArticulosDatos datos = new ArticulosDatos();
             
             try
             {
+                if (articulo == null)
+                    articulo = new Articulo();
+                
                 articulo.Codigo = txtCodigo.Text;
+                articulo.Nombre = txtNombre.Text;
                 articulo.Descripcion = txtDescripcion.Text;
                 articulo.Precio = double.Parse(txtPrecio.Text);
                 articulo.Marca = (MARCA)cboIDMarca.SelectedItem;
                 articulo.Categoria = (Categoria)cboIDCategoria.SelectedItem;
                 articulo.ImagenURL = txtURLImagen.Text;
+               
+                if (articulo.ID != 0){
+                    datos.modificar(articulo);
+                    MessageBox.Show("Modificado exitosamente");
+                }
+                else
+                {
+                    datos.Agregar(articulo);
+                    MessageBox.Show("Agregado exitosamente");
 
-                datos.Agregar(articulo);
-                MessageBox.Show("Agregado exitosamente");
+                }
+
+                
                 Close();
             }
             catch (Exception ex)
@@ -70,19 +84,33 @@ namespace TP_WinForm
         {
             MarcaDatos marcadatos = new MarcaDatos();
             CategoriasDatos categoriasDatos = new CategoriasDatos();
+         
             try
             {
-                cboIDMarca.DataSource = marcadatos.listar();
+              
+                cboIDMarca.ValueMember = "Id";
+                cboIDMarca.DisplayMember = "Descripcion";
 
+               // cboIDMarca.DataSource = marcadatos.listar();
+
+                cboIDCategoria.ValueMember = "Id";
+                cboIDCategoria.DisplayMember = "Descripcion";
+                // cboIDCategoria.DataSource = categoriasDatos.listar();
+                cboIDMarca.DataSource = marcadatos.listar();
                 cboIDCategoria.DataSource = categoriasDatos.listar();
 
-                if(articulo != null)
+
+
+                if (articulo != null)
                 {
                     txtCodigo.Text = articulo.Codigo;
+                    txtNombre.Text = articulo.Nombre;
                     txtDescripcion.Text = articulo.Descripcion;
                     txtPrecio.Text = articulo.Precio.ToString();
                     txtURLImagen.Text = articulo.ImagenURL;
                     cargarImagen(articulo.ImagenURL);
+                    cboIDMarca.SelectedValue = articulo.Marca.id;
+                    cboIDCategoria.SelectedValue = articulo.Categoria.ID;
 
                 }
             }
@@ -109,6 +137,21 @@ namespace TP_WinForm
                 // muestra imagen por defecto si el articulo no tiene una
                 pbxArticulo.Load("https://uning.es/wp-content/uploads/2016/08/ef3-placeholder-image.jpg");
             }
+        }
+
+        private void txtURLImagen_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboIDMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

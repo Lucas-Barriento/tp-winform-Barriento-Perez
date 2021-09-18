@@ -22,8 +22,8 @@ namespace Datos
                 while (datos.Lector.Read())
                 {
                     MARCA aux = new MARCA();
-                    aux.id = (int)datos.Lector["id"];
-                    aux.marca = (string)datos.Lector["Descripcion"];
+                    aux.id = datos.Lector.GetInt32(0);
+                    aux.marca = datos.Lector.GetString(1);
                     lista.Add(aux);
                 }
 

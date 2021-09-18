@@ -44,13 +44,15 @@ namespace TP_WinForm
             this.txtURLImagen = new System.Windows.Forms.TextBox();
             this.lblURLImagen = new System.Windows.Forms.Label();
             this.pbxArticulo = new System.Windows.Forms.PictureBox();
+            this.labelnombre = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 27);
+            this.label2.Location = new System.Drawing.Point(77, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 8;
@@ -59,7 +61,7 @@ namespace TP_WinForm
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(67, 62);
+            this.label3.Location = new System.Drawing.Point(58, 99);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 9;
@@ -68,7 +70,7 @@ namespace TP_WinForm
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(67, 129);
+            this.label4.Location = new System.Drawing.Point(84, 155);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 11;
@@ -77,7 +79,7 @@ namespace TP_WinForm
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(67, 164);
+            this.label5.Location = new System.Drawing.Point(67, 187);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 12;
@@ -86,7 +88,7 @@ namespace TP_WinForm
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(67, 202);
+            this.label6.Location = new System.Drawing.Point(84, 226);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 13;
@@ -102,14 +104,14 @@ namespace TP_WinForm
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(140, 59);
+            this.txtDescripcion.Location = new System.Drawing.Point(140, 96);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(118, 20);
             this.txtDescripcion.TabIndex = 1;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(140, 199);
+            this.txtPrecio.Location = new System.Drawing.Point(140, 226);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(118, 20);
             this.txtPrecio.TabIndex = 5;
@@ -121,7 +123,7 @@ namespace TP_WinForm
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 6;
-            this.btnAceptar.Text = "Guardar";
+            this.btnAceptar.Text = "Modificar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
@@ -139,32 +141,34 @@ namespace TP_WinForm
             // 
             this.cboIDMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboIDMarca.FormattingEnabled = true;
-            this.cboIDMarca.Location = new System.Drawing.Point(140, 129);
+            this.cboIDMarca.Location = new System.Drawing.Point(140, 155);
             this.cboIDMarca.Name = "cboIDMarca";
             this.cboIDMarca.Size = new System.Drawing.Size(118, 21);
             this.cboIDMarca.TabIndex = 3;
+            this.cboIDMarca.SelectedIndexChanged += new System.EventHandler(this.cboIDMarca_SelectedIndexChanged);
             // 
             // cboIDCategoria
             // 
             this.cboIDCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboIDCategoria.FormattingEnabled = true;
-            this.cboIDCategoria.Location = new System.Drawing.Point(140, 164);
+            this.cboIDCategoria.Location = new System.Drawing.Point(140, 187);
             this.cboIDCategoria.Name = "cboIDCategoria";
             this.cboIDCategoria.Size = new System.Drawing.Size(118, 21);
             this.cboIDCategoria.TabIndex = 4;
             // 
             // txtURLImagen
             // 
-            this.txtURLImagen.Location = new System.Drawing.Point(140, 94);
+            this.txtURLImagen.Location = new System.Drawing.Point(140, 125);
             this.txtURLImagen.Name = "txtURLImagen";
             this.txtURLImagen.Size = new System.Drawing.Size(118, 20);
             this.txtURLImagen.TabIndex = 2;
+            this.txtURLImagen.TextChanged += new System.EventHandler(this.txtURLImagen_TextChanged);
             this.txtURLImagen.Leave += new System.EventHandler(this.txtURLImagen_Leave);
             // 
             // lblURLImagen
             // 
             this.lblURLImagen.AutoSize = true;
-            this.lblURLImagen.Location = new System.Drawing.Point(67, 97);
+            this.lblURLImagen.Location = new System.Drawing.Point(54, 128);
             this.lblURLImagen.Name = "lblURLImagen";
             this.lblURLImagen.Size = new System.Drawing.Size(67, 13);
             this.lblURLImagen.TabIndex = 10;
@@ -179,11 +183,30 @@ namespace TP_WinForm
             this.pbxArticulo.TabIndex = 18;
             this.pbxArticulo.TabStop = false;
             // 
+            // labelnombre
+            // 
+            this.labelnombre.AutoSize = true;
+            this.labelnombre.Location = new System.Drawing.Point(77, 63);
+            this.labelnombre.Name = "labelnombre";
+            this.labelnombre.Size = new System.Drawing.Size(44, 13);
+            this.labelnombre.TabIndex = 19;
+            this.labelnombre.Text = "Nombre";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(140, 60);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(118, 20);
+            this.txtNombre.TabIndex = 20;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            // 
             // frmAltaArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(495, 323);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.labelnombre);
             this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.txtURLImagen);
             this.Controls.Add(this.lblURLImagen);
@@ -224,5 +247,7 @@ namespace TP_WinForm
         private System.Windows.Forms.TextBox txtURLImagen;
         private System.Windows.Forms.Label lblURLImagen;
         private System.Windows.Forms.PictureBox pbxArticulo;
+        private System.Windows.Forms.Label labelnombre;
+        private System.Windows.Forms.TextBox txtNombre;
     }
 }
