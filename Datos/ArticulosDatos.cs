@@ -63,9 +63,13 @@ namespace Datos
                 datos.cerrarConexion();
             }
 
+           
+
 
 
         }
+
+       
 
         public void Agregar(Articulo nuevo)
         {

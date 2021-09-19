@@ -97,5 +97,16 @@ namespace TP_WinForm
             dgvArticulos.Visible = true;
             cargar();
         }
+
+        private void BtnBorrar_Click(object sender, EventArgs e)
+        {
+            Articulo seleccionado;
+            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            frmBorrar borrar = new frmBorrar(seleccionado);
+            borrar.ShowDialog();
+            cargar();
+             
+
+        }
     }
 }

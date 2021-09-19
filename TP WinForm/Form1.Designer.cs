@@ -56,9 +56,9 @@ namespace TP_WinForm
             // 
             // pictureBoxArticulos
             // 
-            this.pictureBoxArticulos.Location = new System.Drawing.Point(697, 0);
+            this.pictureBoxArticulos.Location = new System.Drawing.Point(697, 9);
             this.pictureBoxArticulos.Name = "pictureBoxArticulos";
-            this.pictureBoxArticulos.Size = new System.Drawing.Size(295, 348);
+            this.pictureBoxArticulos.Size = new System.Drawing.Size(295, 339);
             this.pictureBoxArticulos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxArticulos.TabIndex = 1;
             this.pictureBoxArticulos.TabStop = false;
@@ -76,7 +76,7 @@ namespace TP_WinForm
             // 
             // BtnModificar
             // 
-            this.BtnModificar.Location = new System.Drawing.Point(12, 171);
+            this.BtnModificar.Location = new System.Drawing.Point(12, 172);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(101, 30);
             this.BtnModificar.TabIndex = 3;
@@ -97,16 +97,17 @@ namespace TP_WinForm
             // 
             // BtnBorrar
             // 
-            this.BtnBorrar.Location = new System.Drawing.Point(12, 207);
+            this.BtnBorrar.Location = new System.Drawing.Point(12, 218);
             this.BtnBorrar.Name = "BtnBorrar";
             this.BtnBorrar.Size = new System.Drawing.Size(101, 30);
             this.BtnBorrar.TabIndex = 5;
             this.BtnBorrar.Text = "Borrar";
             this.BtnBorrar.UseVisualStyleBackColor = true;
+            this.BtnBorrar.Click += new System.EventHandler(this.BtnBorrar_Click);
             // 
             // BtnBuscar
             // 
-            this.BtnBuscar.Location = new System.Drawing.Point(12, 253);
+            this.BtnBuscar.Location = new System.Drawing.Point(12, 264);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(101, 30);
             this.BtnBuscar.TabIndex = 6;
