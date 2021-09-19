@@ -88,11 +88,11 @@ namespace TP_WinForm
             // 
             this.TituloApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TituloApp.ForeColor = System.Drawing.Color.Blue;
-            this.TituloApp.Location = new System.Drawing.Point(2, 9);
+            this.TituloApp.Location = new System.Drawing.Point(7, 9);
             this.TituloApp.Name = "TituloApp";
-            this.TituloApp.Size = new System.Drawing.Size(327, 48);
+            this.TituloApp.Size = new System.Drawing.Size(142, 48);
             this.TituloApp.TabIndex = 4;
-            this.TituloApp.Text = "Lucas Barriento, Perez Paul";
+            this.TituloApp.Text = "CATALOGO";
             this.TituloApp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BtnBorrar
@@ -113,6 +113,7 @@ namespace TP_WinForm
             this.BtnBuscar.TabIndex = 6;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // BtnListar
             // 
@@ -139,7 +140,7 @@ namespace TP_WinForm
             this.Controls.Add(this.pictureBoxArticulos);
             this.Controls.Add(this.dgvArticulos);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Catalogo";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArticulos)).EndInit();

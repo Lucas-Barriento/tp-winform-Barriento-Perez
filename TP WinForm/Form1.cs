@@ -36,7 +36,7 @@ namespace TP_WinForm
                 dgvArticulos.DataSource = ListaArticulo;
                 dgvArticulos.Columns["ImagenUrl"].Visible = false;
                 dgvArticulos.Columns["id"].Visible = false;
-                cargarImagen(ListaArticulo[0].ImagenURL);
+               cargarImagen(ListaArticulo[0].ImagenURL);
             }
             catch (Exception ex)
             {
@@ -48,6 +48,7 @@ namespace TP_WinForm
         {
             //de la fila actual trae el objeto enlazado, devuelve un objeto que se le asigna a Articulo seleccionado
             Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
             System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
             cargarImagen(seleccionado.ImagenURL);
         }
@@ -106,6 +107,11 @@ namespace TP_WinForm
             borrar.ShowDialog();
             cargar();
              
+
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
 
         }
     }
