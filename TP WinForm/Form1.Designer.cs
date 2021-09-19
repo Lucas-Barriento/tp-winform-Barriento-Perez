@@ -37,6 +37,7 @@ namespace TP_WinForm
             this.BtnBorrar = new System.Windows.Forms.Button();
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.BtnListar = new System.Windows.Forms.Button();
+            this.BtnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArticulos)).BeginInit();
             this.SuspendLayout();
@@ -125,12 +126,23 @@ namespace TP_WinForm
             this.BtnListar.UseVisualStyleBackColor = true;
             this.BtnListar.Click += new System.EventHandler(this.BtnListar_Click);
             // 
+            // BtnSalir
+            // 
+            this.BtnSalir.Location = new System.Drawing.Point(12, 318);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(101, 30);
+            this.BtnSalir.TabIndex = 8;
+            this.BtnSalir.Text = "Salir";
+            this.BtnSalir.UseVisualStyleBackColor = true;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1004, 373);
+            this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnListar);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.BtnBorrar);
@@ -158,6 +170,7 @@ namespace TP_WinForm
         private System.Windows.Forms.Button BtnBorrar;
         private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.Button BtnListar;
+        private System.Windows.Forms.Button BtnSalir;
     }
 }
 

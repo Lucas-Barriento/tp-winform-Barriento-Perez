@@ -112,7 +112,14 @@ namespace TP_WinForm
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
+            frmBuscar buscar = new frmBuscar();
+            buscar.ShowDialog();
+            cargar();
+        }
 
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
