@@ -36,7 +36,6 @@ namespace TP_WinForm
             this.TituloApp = new System.Windows.Forms.Label();
             this.BtnBorrar = new System.Windows.Forms.Button();
             this.BtnBuscar = new System.Windows.Forms.Button();
-            this.BtnListar = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArticulos)).BeginInit();
@@ -67,7 +66,7 @@ namespace TP_WinForm
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(12, 126);
+            this.btnAgregar.Location = new System.Drawing.Point(7, 60);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(101, 30);
             this.btnAgregar.TabIndex = 2;
@@ -77,7 +76,7 @@ namespace TP_WinForm
             // 
             // BtnModificar
             // 
-            this.BtnModificar.Location = new System.Drawing.Point(12, 172);
+            this.BtnModificar.Location = new System.Drawing.Point(7, 106);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(101, 30);
             this.BtnModificar.TabIndex = 3;
@@ -98,7 +97,7 @@ namespace TP_WinForm
             // 
             // BtnBorrar
             // 
-            this.BtnBorrar.Location = new System.Drawing.Point(12, 218);
+            this.BtnBorrar.Location = new System.Drawing.Point(7, 153);
             this.BtnBorrar.Name = "BtnBorrar";
             this.BtnBorrar.Size = new System.Drawing.Size(101, 30);
             this.BtnBorrar.TabIndex = 5;
@@ -108,7 +107,7 @@ namespace TP_WinForm
             // 
             // BtnBuscar
             // 
-            this.BtnBuscar.Location = new System.Drawing.Point(12, 264);
+            this.BtnBuscar.Location = new System.Drawing.Point(7, 198);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(101, 30);
             this.BtnBuscar.TabIndex = 6;
@@ -116,19 +115,9 @@ namespace TP_WinForm
             this.BtnBuscar.UseVisualStyleBackColor = true;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
-            // BtnListar
-            // 
-            this.BtnListar.Location = new System.Drawing.Point(12, 83);
-            this.BtnListar.Name = "BtnListar";
-            this.BtnListar.Size = new System.Drawing.Size(101, 30);
-            this.BtnListar.TabIndex = 7;
-            this.BtnListar.Text = "Listar";
-            this.BtnListar.UseVisualStyleBackColor = true;
-            this.BtnListar.Click += new System.EventHandler(this.BtnListar_Click);
-            // 
             // BtnSalir
             // 
-            this.BtnSalir.Location = new System.Drawing.Point(12, 318);
+            this.BtnSalir.Location = new System.Drawing.Point(7, 318);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(101, 30);
             this.BtnSalir.TabIndex = 8;
@@ -143,7 +132,6 @@ namespace TP_WinForm
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1004, 373);
             this.Controls.Add(this.BtnSalir);
-            this.Controls.Add(this.BtnListar);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.BtnBorrar);
             this.Controls.Add(this.TituloApp);
@@ -169,7 +157,6 @@ namespace TP_WinForm
         private System.Windows.Forms.Label TituloApp;
         private System.Windows.Forms.Button BtnBorrar;
         private System.Windows.Forms.Button BtnBuscar;
-        private System.Windows.Forms.Button BtnListar;
         private System.Windows.Forms.Button BtnSalir;
     }
 }

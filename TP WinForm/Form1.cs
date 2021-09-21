@@ -24,7 +24,8 @@ namespace TP_WinForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dgvArticulos.Visible = false;
+            dgvArticulos.Visible = true;
+            cargar();
         }
 
         private void cargar()
@@ -74,7 +75,7 @@ namespace TP_WinForm
 
         private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -86,17 +87,13 @@ namespace TP_WinForm
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
+            
             Articulo seleccionado;
             seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
             modificar.ShowDialog();
             cargar();
-        }
-
-        private void BtnListar_Click(object sender, EventArgs e)
-        {
-            dgvArticulos.Visible = true;
-            cargar();
+        
         }
 
         private void BtnBorrar_Click(object sender, EventArgs e)
@@ -114,12 +111,14 @@ namespace TP_WinForm
         {
             frmBuscar buscar = new frmBuscar();
             buscar.ShowDialog();
-            cargar();
+            
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+       
     }
 }

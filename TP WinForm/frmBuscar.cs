@@ -48,7 +48,7 @@ namespace TP_WinForm
                         aux.ImagenURL = (string)datos.Lector["ImagenUrl"];
 
                     if (!(datos.Lector["Precio"] is DBNull))
-                        aux.Precio = Convert.ToDouble(datos.Lector["Precio"]);
+                        aux.Precio = (decimal)datos.Lector["Precio"];
 
                     aux.Categoria = new Categoria();
                     aux.Categoria.ID = datos.Lector.GetInt32(7);
@@ -118,7 +118,7 @@ namespace TP_WinForm
                         aux.ImagenURL = (string)datos.Lector["ImagenUrl"];
 
                     if (!(datos.Lector["Precio"] is DBNull))
-                        aux.Precio = Convert.ToDouble(datos.Lector["Precio"]);
+                        aux.Precio = (decimal)datos.Lector["Precio"];
 
                     aux.Categoria = new Categoria();
                     aux.Categoria.ID = datos.Lector.GetInt32(7);
@@ -187,7 +187,7 @@ namespace TP_WinForm
                         aux.ImagenURL = (string)datos.Lector["ImagenUrl"];
 
                     if (!(datos.Lector["Precio"] is DBNull))
-                        aux.Precio = Convert.ToDouble(datos.Lector["Precio"]);
+                        aux.Precio = (decimal)datos.Lector["Precio"];
 
                     aux.Categoria = new Categoria();
                     aux.Categoria.ID = datos.Lector.GetInt32(7);

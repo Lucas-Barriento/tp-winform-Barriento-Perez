@@ -18,6 +18,7 @@ namespace TP_WinForm
         public frmAltaArticulo()
         {
             InitializeComponent();
+            Text = "Agregar Articulo";
         }
         public frmAltaArticulo(Articulo articulo)
         {
@@ -49,7 +50,7 @@ namespace TP_WinForm
                 articulo.Codigo = txtCodigo.Text;
                 articulo.Nombre = txtNombre.Text;
                 articulo.Descripcion = txtDescripcion.Text;
-                articulo.Precio = double.Parse(txtPrecio.Text);
+                articulo.Precio = decimal.Parse(txtPrecio.Text);
                 articulo.Marca = (MARCA)cboIDMarca.SelectedItem;
                 articulo.Categoria = (Categoria)cboIDCategoria.SelectedItem;
                 articulo.ImagenURL = txtURLImagen.Text;
